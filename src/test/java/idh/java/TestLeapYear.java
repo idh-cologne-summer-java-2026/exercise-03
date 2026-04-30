@@ -3,7 +3,6 @@ package idh.java;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
-
 import org.junit.jupiter.api.Test;
 
 public class TestLeapYear {
@@ -13,7 +12,7 @@ public class TestLeapYear {
 	@Test
 	public void testActualLeapYears() {
 		try {
-			assertTrue(leapYearObject.isLeapYear(1982));
+			assertTrue(leapYearObject.isLeapYear(1980));
 			assertTrue(leapYearObject.isLeapYear(2000));
 			assertTrue(leapYearObject.isLeapYear(2028));
 			assertTrue(leapYearObject.isLeapYear(202000));

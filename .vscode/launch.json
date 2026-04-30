@@ -1,0 +1,28 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Run Tests",
+            "request": "launch",
+            "mainClass": "org.junit.platform.console.ConsoleLauncher",
+            "args": [
+                "--class-path=src/test/java:src/main/java:lib/junit-platform-console-standalone-1.13.0-M3.jar",
+                "--discover-classes",
+                "--include-classname=.*Test",
+                "--details=verbose"
+            ],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "type": "java",
+            "name": "Run Main (ATM)",
+            "request": "launch",
+            "mainClass": "idh.java.ATM",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        }
+    ]
+}

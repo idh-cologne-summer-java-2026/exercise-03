@@ -107,10 +107,9 @@ public class ATM  {
 		atm.run();
 	};
 	
-	class IllegalInputException extends Exception {
+	public class IllegalInputException extends Exception {
 
 		private static final long serialVersionUID = 1L;
 		
 	}
-	
 }
