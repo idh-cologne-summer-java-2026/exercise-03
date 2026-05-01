@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 public class ATM  {
 	
 	// initial cash in the ATM
-	int cash = 100;
+	int cash = 10000;
 		
 	// Which banknotes do we have?
 	int[] value_of_bills = new int[] {500, 200, 100, 50, 20, 10, 5};
@@ -78,7 +78,7 @@ public class ATM  {
 	 * @return
 	 * @throws IllegalInputException 
 	 */
-	protected int[] convertToBills(int amount) throws IllegalInputException {
+	public int[] convertToBills(int amount) throws IllegalInputException {
 		// illegal amount
 		if (amount < 0)
 			return new int[] {0,0,0,0,0,0,0};
