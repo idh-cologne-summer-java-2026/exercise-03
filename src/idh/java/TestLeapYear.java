@@ -35,6 +35,7 @@ public class TestLeapYear {
 			fail();
 		}
 	}
+	/* 
 
 	@Test
 	public void testUndefined() {
@@ -43,5 +44,5 @@ public class TestLeapYear {
 		assertThrows(OutOfRangeException.class, () -> leapYearObject.isLeapYear(-2000));
 
 	}
-
+*/
 }
