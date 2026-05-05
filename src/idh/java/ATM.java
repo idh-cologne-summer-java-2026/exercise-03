@@ -1,4 +1,3 @@
-
 package idh.java;
 
 import java.io.BufferedReader;
@@ -41,7 +40,7 @@ public class ATM  {
 		}
 		
 		// check if value can be divided by 5
-		if (amount % 5 > 0) {
+		if (amount % 5 != 0) {
 			System.out.println("Sorry, this amount cannot be expressed in bills.");
 			return;
 		}
@@ -66,7 +65,7 @@ public class ATM  {
 		b.append(" and ").append(bills[i]).append(" ").append(value_of_bills[i]).append("s.");
 		System.out.println(b.toString());
 
-		cash += amount;
+		cash -= amount;
 		
 	};
 
@@ -107,7 +106,7 @@ public class ATM  {
 		atm.run();
 	};
 	
-	class IllegalInputException extends Exception {
+	static class IllegalInputException extends Exception {
 
 		private static final long serialVersionUID = 1L;
 		
