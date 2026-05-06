@@ -1,4 +1,3 @@
-
 package idh.java;
 
 import java.io.BufferedReader;
@@ -92,18 +91,18 @@ public class ATM
 			return new int[] {0,0,0,0,0,0,0};
 		
 		// return array for the different bill types
-		int[] aR = new int[7];
+		int[] aiR = new int[7];
 		
 		// iterate over the possible pill types
 		// order is important here! Need to go from largest to smallest.
 		for (int i = 0;  i < iaValue_of_bills.length; i++) {
-			aR[i] = iAmount / iaValue_of_bills[i];
+			aiR[i] = iAmount / iaValue_of_bills[i];
 			iAmount = iAmount % iaValue_of_bills[i];		
 		}
 		if (iAmount > 0) {
 			throw new IllegalInputException();
 		}
-		return aR;
+		return aiR;
 	}
 	
 	
