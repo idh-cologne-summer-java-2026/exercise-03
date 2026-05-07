@@ -1,6 +1,7 @@
 package idh.java;
 
-public class LeapYear {
+public class LeapYear 
+{
 	public boolean isLeapYear(int iYear) throws OutOfRangeException 
 	{
 		// The Gregorian calendar went into effect in October 1582
@@ -18,4 +19,37 @@ public class LeapYear {
     
     	return ( (b4teilbar && !b100teilbar) || b400teilbar );
 	}
+	
+	public void print(int iYear) 
+	{
+		try 
+		{
+			System.out.print("Das Jahr "+iYear);
+			if(isLeapYear(iYear))
+				System.out.println(" ist ein Schaltjahr.");
+			else
+				System.out.println(" ist kein Schaltjahr.");
+			System.out.println("=======");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void main(String[] args) 
+	{
+		LeapYear outputLeapYear = new LeapYear();
+		
+		outputLeapYear.print(1982);
+		outputLeapYear.print(1984);
+		outputLeapYear.print(2000);
+		outputLeapYear.print(2028);
+		outputLeapYear.print(202000);
+		
+		outputLeapYear.print(1983);
+		outputLeapYear.print(2026);
+		outputLeapYear.print(1999);
+		outputLeapYear.print(1998);
+		outputLeapYear.print(1997);
+		outputLeapYear.print(1900);
+	};
 }
