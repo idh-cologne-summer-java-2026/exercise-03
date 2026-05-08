@@ -59,14 +59,24 @@ public class ATM  {
 		// generate the printout string
 		StringBuilder b = new StringBuilder();
 		b.append("Ok, you'll get ");
-		int i;
+		 
+		int i;  
+		/* Iteration in the following loop does not go 
+		 * beyond the penultimate index of the two arrays. 
+		 * This seems to be done in order to be able to append 
+		 * the values of the last indices separately. This goal
+		 * in turn implies previous declaration of the 
+		 * counter i outside of the loop, for otherwise its last value 
+		 * could not be accessed by separate append statement.*/    
 		for (i = 0; i < value_of_bills.length-1; i++) {
 			b.append(bills[i]).append(" ").append(value_of_bills[i]).append("s, ");
 		}
 		b.append(" and ").append(bills[i]).append(" ").append(value_of_bills[i]).append("s.");
 		System.out.println(b.toString());
 
-		cash += amount;
+		/*increases the resulting cash amount by 
+		the amount withdrawn, thus allowing for a de-facto-loop*/
+		cash += amount; 
 		
 	};
 
