@@ -67,7 +67,7 @@ public class ATM  {
 		System.out.println(b.toString());
 
 		cash += amount;
-		
+		 
 	};
 
 	/**
@@ -89,7 +89,7 @@ public class ATM  {
 		// iterate over the possible pill types
 		// order is important here! Need to go from largest to smallest.
 		for (int i = 0;  i < value_of_bills.length; i++) {
-			r[i] = amount / value_of_bills[i];
+			r[i] = amount / value_of_bills[i]; //1051 -> 1:1051/500 = 2 R51; 1051 % 500 = 51 -> 51 / 100 = 0 R51; 51 % 100 = 0R51 -> 51/50 = 1R1; 51%50 = 1 -> 1/(...) R1 -> 1/1 = 1R0; [2,0,1,1]
 			amount = amount % value_of_bills[i];		
 		}
 		if (amount > 0) {

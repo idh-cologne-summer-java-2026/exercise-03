@@ -19,7 +19,7 @@ public class TestLeapYear {
 			assertTrue(leapYearObject.isLeapYear(202000));
 		} catch (OutOfRangeException e) {
 			fail();
-		}
+		} 
 	}
 
 	@Test
