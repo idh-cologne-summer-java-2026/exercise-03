@@ -12,13 +12,13 @@ public class ATM  {
 	// Which banknotes do we have?
 	int[] value_of_bills = new int[] {500, 200, 100, 50, 20, 10, 5};
 
-	
+	 
 	/**
 	 * Main command loop of the ATM Asks the user to enter a number, and passes this
 	 * number to the function cashout(...) which actually does the calculation and
 	 * produces money. If the user enters anything else than an integer number, the
 	 * loop breaks and the program exists
-	 */
+	 */ 
 	public void run() {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		while (true) {

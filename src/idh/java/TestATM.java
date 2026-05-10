@@ -20,7 +20,7 @@ public class TestATM {
  ATM testATM = new ATM();
  int amount1 = 575;
  int amount2 = -123;
- int amount3 = 792832;
+ int amount3 = 792832; 
  int hugeAmount = 699927865; //699927500 / 500 = 1399855 R365 -> 365/200 = 1R165 -> 165/100 = 1 R65 -> 65/50 = 1R15 -> 15/20= 0R15 -> 15/10 = 1 R5 -> 5/5 =1
  int nonDividableAmount = 129;
  
@@ -53,7 +53,7 @@ public class TestATM {
 		 System.out.println("IllegalInputException caught.");
 		 e.printStackTrace();
 	 }
- }
+ } 
  
  
  /** Replaced by an {@code assertThrows} statement.
