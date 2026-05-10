@@ -33,7 +33,7 @@ public class TestATM {
  the method stops if one test does not pass */
  
  /** Testing the convertToBills method.
-  * The 2nd {@code assertThrows method} (line 42) does not pass, since the expected exception is caught beforehand. Thus the {@code assertThrows Method does not receive an exception and fails.} 
+  * The 2nd {@code assertThrows method} (line 42) does not pass, since the expected exception is caught beforehand. Thus the {@code assertThrows test method not receive an exception and the test fails.} 
   * **/
  @Test
  public void testConvertToBills() {
