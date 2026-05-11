@@ -12,13 +12,6 @@ public class ATM  {
 	// Which banknotes do we have?
 	int[] value_of_bills = new int[] {500, 200, 100, 50, 20, 10, 5};
 
-	
-	/**
-	 * Main command loop of the ATM Asks the user to enter a number, and passes this
-	 * number to the function cashout(...) which actually does the calculation and
-	 * produces money. If the user enters anything else than an integer number, the
-	 * loop breaks and the program exists
-	 */
 	public void run() {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		while (true) {
@@ -52,7 +45,6 @@ public class ATM  {
 		try {
 			bills = convertToBills(amount);
 		} catch (IllegalInputException e) {
-			// this should not happen, since we're verifying it before
 			e.printStackTrace();
 		}
 		
@@ -87,7 +79,7 @@ public class ATM  {
 		int[] r = new int[7];
 		
 		// iterate over the possible pill types
-		// order is important here! Need to go from largest to smallest.
+		// Need to go from largest to smallest.
 		for (int i = 0;  i < value_of_bills.length; i++) {
 			r[i] = amount / value_of_bills[i];
 			amount = amount % value_of_bills[i];		
