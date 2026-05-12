@@ -4,28 +4,31 @@ package idh.java;
    import org.junit.jupiter.api.Test;
 
   public class TestATM {
-  private final ATM atm = new ATM();
 
-  
-  
-@Test
+	  private final ATM atm = new ATM();
+	  
+	  @Test
 
-public void testConvertToBills_MinimumAmount() throws ATM.IllegalInputException{
-int [] expected = new int [] {0, 0, 0, 0, 0, 0, 0, 1};
-int [] actual = atm.convertToBills(5);
+	  public void testConvertToBills_1() throws ATM.IllegalInputException{
+	     int [] a = new int [] {0, 0, 0, 0, 0, 0, 1};
+	     int [] b = atm.convertToBills(5);
+	     assertArrayEquals(a, b);
+	    }
 
-assertArrayEquals(expected, actual);
+	  @Test
 
-  }
+	  public void testConvertToBills_2() throws ATM.IllegalInputException{
+	     int [] a = new int [] {2, 1, 0, 0, 1, 0, 0};
+	     int [] b = atm.convertToBills(1220);
+	     assertArrayEquals(a, b);
+	    }
 
-@Test
+	  @Test
 
-public void testConvertToBills_LargeAmount() throws ATM.IllegalInputException{
-   int [] expected = new int [] {1, 0, 0, 0, 0, 0, 0, 0};
-   int [] actual = atm.convertToBills(500);
-
-assertArrayEquals(expected, actual);
-
-  }
+	  public void testConvertToBills_3() throws ATM.IllegalInputException{
+	     int [] a = new int [] {0, 0, 0, 0, 0, 0, 0};
+	     int [] b = atm.convertToBills(-1);
+	     assertArrayEquals(a, b);
+	    }
 
 }
