@@ -66,7 +66,7 @@ public class ATM  {
 		b.append(" and ").append(bills[i]).append(" ").append(value_of_bills[i]).append("s.");
 		System.out.println(b.toString());
 
-		cash += amount;
+		cash -= amount;
 		
 	};
 
