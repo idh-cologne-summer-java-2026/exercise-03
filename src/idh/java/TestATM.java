@@ -11,8 +11,8 @@ package idh.java;
 @Test
 
 public void testConvertToBills_MinimumAmount() throws ATM.IllegalInputException{
-int [] expected = new int [] {0, 0, 0, 0, 0, 0, 0, 1};
-int [] actual = atm.convertToBills(5);
+	int [] expected = new int [] {0, 0, 0, 0, 0, 0, 1};
+	int [] actual = atm.convertToBills(5);
 
 assertArrayEquals(expected, actual);
 
@@ -21,11 +21,39 @@ assertArrayEquals(expected, actual);
 @Test
 
 public void testConvertToBills_LargeAmount() throws ATM.IllegalInputException{
-   int [] expected = new int [] {1, 0, 0, 0, 0, 0, 0, 0};
+   int [] expected = new int [] {1, 0, 0, 0, 0, 0, 0};
    int [] actual = atm.convertToBills(500);
 
 assertArrayEquals(expected, actual);
 
+  }
+
+@Test
+
+public void testConvertToBills_NormalAmount() throws ATM.IllegalInputException {
+	int [] expected = new int[] {0, 1, 0, 1, 1, 1, 1};
+	int [] actual = atm.convertToBills(285);
+
+assertArrayEquals(expected, actual);
+  }
+
+@Test
+
+public void testConvertToBills_NegativeAmount() throws ATM.IllegalInputException {
+
+    int [] expected = new int[] {0, 0, 0, 0, 0, 0, 0};
+    int [] actual = atm.convertToBills(-10);
+
+assertArrayEquals(expected, actual);
+  }
+
+@Test
+
+public void testConvertToBills_InvalidAmount() {
+
+assertThrows(ATM.IllegalInputException.class, () -> {
+	atm.convertToBills(13);
+      });
   }
 
 }
