@@ -10,7 +10,7 @@ public class ATM  {
 	int cash = 100;
 		
 	// Which banknotes do we have?
-	int[] value_of_bills = new int[] {500, 200, 100, 50, 20, 10, 5};
+	static int[] value_of_bills = new int[] {500, 200, 100, 50, 20, 10, 5};
 
 	
 	/**
@@ -78,7 +78,7 @@ public class ATM  {
 	 * @return
 	 * @throws IllegalInputException 
 	 */
-	protected int[] convertToBills(int amount) throws IllegalInputException {
+	public static int[] convertToBills(int amount) throws IllegalInputException {
 		// illegal amount
 		if (amount < 0)
 			return new int[] {0,0,0,0,0,0,0};
@@ -107,10 +107,11 @@ public class ATM  {
 		atm.run();
 	};
 	
-	class IllegalInputException extends Exception {
-
+	public static class IllegalInputException extends Exception {
+		public IllegalInputException() {super(); }
+		public IllegalInputException(String message) { super(message); }
 		private static final long serialVersionUID = 1L;
-		
+
 	}
 	
 }
