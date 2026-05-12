@@ -7,13 +7,13 @@ import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.Test;
 
 public class TestLeapYear {
-
+//muss kommentare zum commiten machen
 	LeapYear leapYearObject = new LeapYear();
 
 	@Test
 	public void testActualLeapYears() {
 		try {
-			assertTrue(leapYearObject.isLeapYear(1982));
+			assertTrue(leapYearObject.isLeapYear(1984));
 			assertTrue(leapYearObject.isLeapYear(2000));
 			assertTrue(leapYearObject.isLeapYear(2028));
 			assertTrue(leapYearObject.isLeapYear(202000));
