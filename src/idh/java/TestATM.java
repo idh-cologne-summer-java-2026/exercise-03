@@ -20,5 +20,5 @@ public class TestATM {
 		int[] expected = new int[] {1, 0, 0, 0, 0, 0, 0, 0};
 		int[] actual = atm.convertToBills(500);
 		assertArrayEquals(expected, actual);
-	}
+	} //test test 
 } 
