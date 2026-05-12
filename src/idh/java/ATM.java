@@ -14,7 +14,7 @@ public class ATM  {
 
 	
 	/**
-	 * Main command loop of the ATM Asks the user to enter a number, and passes this
+	 * Main command loop of the ATM asks the user to enter a number, and passes this
 	 * number to the function cashout(...) which actually does the calculation and
 	 * produces money. If the user enters anything else than an integer number, the
 	 * loop breaks and the program exists
@@ -37,7 +37,7 @@ public class ATM  {
 		// check for cash in the ATM
 		if (amount > cash) {
 			System.out.println("Sorry, not enough cash left.");
-			return;
+			//return;
 		}
 		
 		// check if value can be divided by 5
@@ -84,7 +84,7 @@ public class ATM  {
 			return new int[] {0,0,0,0,0,0,0};
 		
 		// return array for the different bill types
-		int[] r = new int[7];
+		int[] r = new int[value_of_bills.length];
 		
 		// iterate over the possible pill types
 		// order is important here! Need to go from largest to smallest.
