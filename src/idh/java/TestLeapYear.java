@@ -43,4 +43,5 @@ public class TestLeapYear {
 		assertThrows(OutOfRangeException.class, () -> leapYearObject.isLeapYear(-2000));
 
 	}
- }
+
+}
