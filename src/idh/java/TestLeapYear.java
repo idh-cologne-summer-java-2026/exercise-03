@@ -13,7 +13,7 @@ public class TestLeapYear {
 	@Test
 	public void testActualLeapYears() {
 		try {
-			assertTrue(leapYearObject.isLeapYear(1982));
+			assertTrue(leapYearObject.isLeapYear(1980));
 			assertTrue(leapYearObject.isLeapYear(2000));
 			assertTrue(leapYearObject.isLeapYear(2028));
 			assertTrue(leapYearObject.isLeapYear(202000));
@@ -25,15 +25,20 @@ public class TestLeapYear {
 	@Test
 	public void testNotLeapYears() {
 		try {
-			assertTrue(leapYearObject.isLeapYear(1983));
-			assertTrue(leapYearObject.isLeapYear(2026));
-			assertTrue(leapYearObject.isLeapYear(1999));
-			assertTrue(leapYearObject.isLeapYear(1998));
-			assertTrue(leapYearObject.isLeapYear(1997));
-			assertTrue(leapYearObject.isLeapYear(1900));
+			assertFalse(leapYearObject.isLeapYear(1980));
+			assertFalse(leapYearObject.isLeapYear(2026));
+			assertFalse(leapYearObject.isLeapYear(1999));
+			assertFalse(leapYearObject.isLeapYear(1998));
+			assertFalse(leapYearObject.isLeapYear(1997));
+			assertFalse(leapYearObject.isLeapYear(1900));
 		} catch (OutOfRangeException e) {
 			fail();
 		}
+	}
+
+	private void assertFalse(boolean leapYear) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Test

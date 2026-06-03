@@ -4,13 +4,15 @@ package idh.java;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
+import idh.java.ATM.IllegalInputException;
+
 public class ATM  {
 	
 	// initial cash in the ATM
 	int cash = 100;
 		
 	// Which banknotes do we have?
-	int[] value_of_bills = new int[] {500, 200, 100, 50, 20, 10, 5};
+	static int[] value_of_bills = new int[] {500, 200, 100, 50, 20, 10, 5};
 
 	
 	/**
@@ -27,11 +29,12 @@ public class ATM  {
 				int amount = Integer.parseInt(br.readLine());
 				cashout(amount);
 			} catch (Exception e) {
-				e.printStackTrace();
-				break;
-			}
+				e.printStackTrace();	
+				break; }
+		}    
+			
 		}
-	}
+	
 
 	public void cashout(int amount) {
 		// check for cash in the ATM
@@ -78,20 +81,23 @@ public class ATM  {
 	 * @return
 	 * @throws IllegalInputException 
 	 */
-	protected int[] convertToBills(int amount) throws IllegalInputException {
+	 public static int[] convertToBills(int amount) throws IllegalInputException {
 		// illegal amount
 		if (amount < 0)
-			return new int[] {0,0,0,0,0,0,0};
+			throw new ATM.IllegalInputException();
 		
 		// return array for the different bill types
 		int[] r = new int[7];
 		
-		// iterate over the possible pill types
+		// iterate over the possible bill types
 		// order is important here! Need to go from largest to smallest.
-		for (int i = 0;  i < value_of_bills.length; i++) {
-			r[i] = amount / value_of_bills[i];
-			amount = amount % value_of_bills[i];		
-		}
+		
+			for (int i = 0;  i < value_of_bills.length; i++) {
+				r[i] = amount / value_of_bills[i];
+				amount = amount % value_of_bills[i];		
+			}
+
+		
 		if (amount > 0) {
 			throw new IllegalInputException();
 		}
